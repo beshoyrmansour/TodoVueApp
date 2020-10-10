@@ -19,6 +19,7 @@ const actions = {
     commit("SET_TODOS", response.data);
   },
 
+  // fetchInCompleteTodos
   async fetchInCompleteTodos({ commit }) {
     const response = await axios.get(
       "https://jsonplaceholder.typicode.com/todos"
@@ -26,6 +27,18 @@ const actions = {
     commit(
       "SET_TODOS",
       response.data.filter((t) => !t.completed)
+    );
+    // completed
+  },
+
+  // fetchCompletedTodos
+  async fetchCompletedTodos({ commit }) {
+    const response = await axios.get(
+      "https://jsonplaceholder.typicode.com/todos"
+    );
+    commit(
+      "SET_TODOS",
+      response.data.filter((t) => t.completed)
     );
     // completed
   },
