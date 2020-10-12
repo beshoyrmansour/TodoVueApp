@@ -17,14 +17,12 @@ export default {
     };
   },
   methods: {
-    ...mapActions(["AddTodo","deleteTodo", "ToggleTodo"]),
+    ...mapActions(["AddTodo", "deleteTodo", "ToggleTodo"]),
     onSubmit() {
-      //   e.preventDefualt();
       console.log("this.title", this.title);
       this.AddTodo(this.title);
       this.title = "";
     },
-    
   },
 };
 </script>
@@ -35,9 +33,13 @@ export default {
   flex-direction: column;
   align-items: flex-end;
   justify-content: stretch;
-  label{
+  @media (min-width: 600px) {
+    align-items: center;
+  }
+  label {
     text-align: left;
     align-self: start;
+    width: fit-content;
   }
   input {
     display: block;
