@@ -1,15 +1,29 @@
 <template>
   <div class="spinner">
-    <div class="rect1"></div>
-    <div class="rect2"></div>
-    <div class="rect3"></div>
-    <div class="rect4"></div>
-    <div class="rect5"></div>
+    <div class="rect1" :style="SpinnerCSS"></div>
+    <div class="rect2" :style="SpinnerCSS"></div>
+    <div class="rect3" :style="SpinnerCSS"></div>
+    <div class="rect4" :style="SpinnerCSS"></div>
+    <div class="rect5" :style="SpinnerCSS"></div>
   </div>
 </template>
 
 <script>
-export default {};
+export default {
+  props: {
+    spinnerColor: {
+      type: String,
+      default: "#00f",
+    },
+  },
+  computed: {
+    SpinnerCSS() {
+      return {
+        backgroundColor: this.spinnerColor,
+      };
+    },
+  },
+};
 </script>
 
 <style>
@@ -22,7 +36,7 @@ export default {};
 }
 
 .spinner > div {
-  background-color: #007bff;
+  background-color: var(--spinner-color);
   height: 100%;
   width: 6px;
   display: inline-block;

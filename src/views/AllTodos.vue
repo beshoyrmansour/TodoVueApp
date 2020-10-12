@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>AllTodos</h1>
+    <h2>AllTodos</h2>
     <ul class="todosList">
       <TodoItem v-for="todo in allTodos" :key="todo.id" :todo="todo" />
     </ul>
@@ -31,5 +31,14 @@ export default {
   grid-template-columns: repeat(1fr);
   list-style: none;
   grid-gap: 1rem;
+  @media (min-width: 600px) {
+    grid-template-columns: auto auto;
+  }
+  @media (min-width: 900px) {
+    grid-template-columns: auto auto auto;
+  }
+  @media (min-width: 1400px) {
+    grid-template-columns: auto auto auto auto;
+  }
 }
 </style>

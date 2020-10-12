@@ -1,14 +1,9 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">All</router-link>
-      |
-      <router-link to="/incomplete">Incomplete</router-link>
-      |
-      <router-link to="/completed">Completed</router-link>
-    </div>
     <div class="container">
-      <addTodo />
+      <h1>ToDo Demo App</h1>
+      <AddTodo />
+      <NavBar />
       <router-view />
     </div>
   </div>
@@ -16,9 +11,10 @@
 
 <script>
 import AddTodo from "./components/AddTodo";
+import NavBar from "./components/NavBar";
 export default {
   name: "App",
-  components: { AddTodo },
+  components: { AddTodo, NavBar },
 };
 </script>
 
@@ -60,18 +56,6 @@ body {
     overflow-x: hidden;
     overflow: auto;
     padding: 0 15px;
-  }
-  #nav {
-    padding: 30px;
-
-    a {
-      font-weight: bold;
-      color: #2c3e50;
-
-      &.router-link-exact-active {
-        color: #42b983;
-      }
-    }
   }
 }
 ul {

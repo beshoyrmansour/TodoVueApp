@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>Incomplete Todos</h1>
+    <h2>Incomplete Todos</h2>
 
     <ul class="todosList">
       <TodoItem v-for="todo in allTodos" :key="todo.id" :todo="todo" />

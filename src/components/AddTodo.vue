@@ -1,7 +1,8 @@
 <template>
   <form class="addNewForm" @submit.prevent="onSubmit">
     <!-- <h1>ADD NEW</h1> -->
-    <input type="text" v-model="title" />
+    <label for="todoText"> Todo Text</label>
+    <input type="text" name="todoText" id="todoText" v-model="title" />
     <button type="submit">Add</button>
   </form>
 </template>
@@ -28,13 +29,16 @@ export default {
 };
 </script>
 
-sc
 <style lang="scss">
 .addNewForm {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
   justify-content: stretch;
+  label{
+    text-align: left;
+    align-self: start;
+  }
   input {
     display: block;
     width: 100%;
